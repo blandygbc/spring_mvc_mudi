@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MudiApplication<mudi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.blandygbc.mvc.mudi.MudiApplication",
+            "projectName": "mudi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
