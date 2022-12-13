@@ -15,30 +15,32 @@
         <div class="jumbotron mb-0">
             <h1 class="display-4">Novo Pedido</h1>
         </div>
-
-        <form action="/pedido/novo" method="POST">
-            <div>
-                <label for="nomeProduto">Produto</label>
-                <input name="nomeProduto" placeholder="nome do produto" />
-                <small>Informa qual o nome do produto.</small>
-            </div>
-            <div>
-                <label for="urlProduto">Url</label>
-                <input name="urlProduto" placeholder="url do produto" />
-                <small>Procure em um site o produto que você deseja e cole a url da página aqui.</small>
-            </div>
-            <div>
-                <label for="urlImagem">Imagem</label>
-                <input name="urlImagem" placeholder="url da imagem" />
-                <small>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir compradores.</small>
-            </div>
-            <div>
-                <label for="descricao">Descrição</label>
-                <textarea name="descricao"
-                    placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
-            </div>
-            <button type="submit">Cadastrar</button>
-        </form>
+        <div class="card">
+            <form class="card-body" action="/pedido/novo" method="POST">
+                <div class="form-group">
+                    <label for="nomeProduto">Produto</label>
+                    <input name="nomeProduto" placeholder="nome do produto" class="form-control" />
+                    <small>Informa qual o nome do produto.</small>
+                </div>
+                <div class="form-group">
+                    <label for="urlProduto">Url</label>
+                    <input name="urlProduto" placeholder="url do produto" class="form-control" />
+                    <small>Procure em um site o produto que você deseja e cole a url da página aqui.</small>
+                </div>
+                <div class="form-group">
+                    <label for="urlImagem">Imagem</label>
+                    <input name="urlImagem" placeholder="url da imagem" class="form-control" />
+                    <small>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir
+                        compradores.</small>
+                </div>
+                <div class="form-group">
+                    <label for="descricao">Descrição</label>
+                    <textarea name="descricao" class="form-control"
+                        placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Cadastrar</button>
+            </form>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
