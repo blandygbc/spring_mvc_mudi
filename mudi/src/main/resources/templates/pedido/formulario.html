@@ -16,7 +16,6 @@
             <h1 class="display-4">Novo Pedido</h1>
         </div>
         <div class="card">
-<<<<<<< HEAD
             <form th:object="${requisicaoNovoPedido}" class="card-body" action="/pedido/novo" method="POST">
                 <div class="form-group">
                     <label for="nomeProduto">Produto</label>
@@ -45,29 +44,6 @@
                     <textarea th:field="*{descricao}" class="form-control" th:errorclass="is-invalid"
                         placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
                     <div th:errors="*{descricao}" class="invalid-feedback">Erros da descrição</div>
-=======
-            <form class="card-body" action="/pedido/novo" method="POST">
-                <div class="form-group">
-                    <label for="nomeProduto">Produto</label>
-                    <input name="nomeProduto" placeholder="nome do produto" class="form-control" />
-                    <small>Informa qual o nome do produto.</small>
-                </div>
-                <div class="form-group">
-                    <label for="urlProduto">Url</label>
-                    <input name="urlProduto" placeholder="url do produto" class="form-control" />
-                    <small>Procure em um site o produto que você deseja e cole a url da página aqui.</small>
-                </div>
-                <div class="form-group">
-                    <label for="urlImagem">Imagem</label>
-                    <input name="urlImagem" placeholder="url da imagem" class="form-control" />
-                    <small>Copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir
-                        compradores.</small>
-                </div>
-                <div class="form-group">
-                    <label for="descricao">Descrição</label>
-                    <textarea name="descricao" class="form-control"
-                        placeholder="Adicione detalhes importantes para ajudar o comprador."></textarea>
->>>>>>> b82bcbeab9976acc554980a0264401507cb6fd53
                 </div>
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
             </form>
