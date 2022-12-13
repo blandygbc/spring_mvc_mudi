@@ -27,11 +27,19 @@ public class PedidoController {
     }
 
     @PostMapping("/novo")
+<<<<<<< HEAD
     public String novo(@Valid RequisicaoNovoPedido requisicao, BindingResult result) {
         if (result.hasErrors()) {
             return "pedido/formulario";
         }
         Pedido pedido = requisicao.toPedido();
+=======
+    public String novo(@Valid RequisicaoNovoPedido requisicaoNovoPedido, BindingResult result) {
+        if (result.hasErrors()) {
+            return "pedido/formulario";
+        }
+        Pedido pedido = requisicaoNovoPedido.toPedido();
+>>>>>>> b82bcbeab9976acc554980a0264401507cb6fd53
         pedidoRepository.save(pedido);
         return "pedido/formulario";
     }
