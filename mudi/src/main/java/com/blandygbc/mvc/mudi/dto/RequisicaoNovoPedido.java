@@ -1,20 +1,12 @@
 package com.blandygbc.mvc.mudi.dto;
 
-import javax.validation.constraints.NotBlank;
-
 import com.blandygbc.mvc.mudi.model.Pedido;
 
 public class RequisicaoNovoPedido {
 
-    @NotBlank
     private String nomeProduto;
-
-    @NotBlank
     private String urlProduto;
-
-    @NotBlank
     private String urlImagem;
-
     private String descricao;
 
     public String getNomeProduto() {

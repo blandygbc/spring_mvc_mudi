@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.blandygbc.mvc.mudi.dto.RequisicaoNovoPedido;
 import com.blandygbc.mvc.mudi.model.Pedido;
+import com.blandygbc.mvc.mudi.model.StatusPedido;
 import com.blandygbc.mvc.mudi.repositories.PedidoRepository;
 
 @Controller
@@ -32,7 +33,8 @@ public class PedidoController {
             return "pedido/formulario";
         }
         Pedido pedido = requisicao.toPedido();
+        pedido.setStatus(StatusPedido.AGUARDANDO);
         pedidoRepository.save(pedido);
-        return "pedido/formulario";
+        return "redirect:/home";
     }
 }
