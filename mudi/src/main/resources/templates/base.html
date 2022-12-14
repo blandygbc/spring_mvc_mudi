@@ -21,7 +21,12 @@
 
 <div th:fragment="Logo" class="logo-container mb-3 p-3 d-flex justify-content-between">
     <span class="logo">mudi</span>
-    <span class="mt-3">login</span>
+    <span class="mt-3">
+        <a sec:authorize="!isAuthenticated()" class="text-light" href="/Login">login</a>
+        <a onclick="document.querySelector('#form-login').submit()" sec:authorize="isAuthenticated()" class="text-light"
+            href="#">logout</a>
+        <form id="form-login" th:action="@{/Logout}" method="post"></form>
+    </span>
 </div>
 
 <div th:fragment="titulo(valor)" class="jumbotron mb-0">
