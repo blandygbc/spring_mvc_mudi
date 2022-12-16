@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<head th:replace="~{base::head('Home')}"></head>
+<head th:replace="~{base::head('Meus Pedidos')}"></head>
 
 <body>
     <div th:replace="~{base::Logo}"></div>
     <div class="container">
-        <div th:replace="~{base::titulo('Home')}"></div>
+        <div th:replace="~{base::titulo('Meus Pedidos')}"></div>
 
+        <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+            <div class="navbar-nav">
+                <a th:classappend="${status} == null ? 'active'" class="nav-item nav-link"
+                    th:href="@{/usuario/pedido}">Todos</a>
+                <a th:classappend="${status} == 'aguardando' ? 'active'" class="nav-item nav-link"
+                    th:href="@{/usuario/pedido/aguardando}">Aguardando</a>
+                <a th:classappend="${status} == 'aprovado' ? 'active'" class="nav-item nav-link"
+                    th:href="@{/usuario/pedido/aprovado}">Aprovado</a>
+                <a th:classappend="${status} == 'entregue' ? 'active'" class="nav-item nav-link"
+                    th:href="@{/usuario/pedido/entregue}">Entregue</a>
+            </div>
+            <a href="@{/usuario/pedido/formulario}"><button
+                    class="btn btn-outline-secondary my-2 my-sm-0">Novo</button></a>
+        </nav>
         <div th:each="pedido:${pedidos}" class="card mb-3">
-
-            <div th:text="${pedido.nomeProduto}" class="card-header alert alert-dark">Nome do
-                Produto</div>
-
+            <th:block th:switch="${pedido.status.name()}">
+                <div th:case="'AGUARDANDO'" th:text="${pedido.nomeProduto}" class="card-header alert alert-warning">Nome
+                    do
+                    Produto</div>
+                <div th:case="'APROVADO'" th:text="${pedido.nomeProduto}" class="card-header alert alert-success">Nome
+                    do
+                    Produto</div>
+                <div th:case="'ENTREGUE'" th:text="${pedido.nomeProduto}" class="card-header alert alert-dark">Nome do
+                    Produto</div>
+            </th:block>
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-sm-8 mb-3">
